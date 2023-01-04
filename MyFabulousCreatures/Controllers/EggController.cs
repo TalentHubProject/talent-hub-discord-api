@@ -11,18 +11,15 @@ namespace MyFabulousCreatures.Controllers;
 public sealed class EggController
     : ControllerBase
 {
-    private readonly IWebHostEnvironment _environment;
     private readonly ILogger<EggController> _logger;
     
     public EggController(
-        IWebHostEnvironment environment,
         ILogger<EggController> logger)
     {
-        _environment = environment;
         _logger = logger;
     }
 
-    [HttpGet()]
+    [HttpGet]
     public async Task<IActionResult> GetEggAsync()
     {
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Assets/Egg", "oeuf.png");
