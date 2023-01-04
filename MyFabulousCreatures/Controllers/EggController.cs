@@ -26,13 +26,13 @@ public sealed class EggController
     [HttpGet]
     public async Task<IActionResult> GetEggAsync()
     {
-        var egg = await _fileImageService.GetImageFileAsync("Egg/egg.png");
-
+        var egg = await _fileImageService.GetImageFileAsync("Egg/1/egg_1.png");
+        
         if (egg is null)
         {
             return NotFound();
         }
 
-        return Ok(egg);
+        return File(egg.FileContents, "image/png");
     }
 }
