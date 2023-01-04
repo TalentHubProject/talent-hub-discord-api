@@ -3,14 +3,21 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.AspNetCore.Mvc;
+using Remora.Results;
 
 namespace MyFabulousCreatures.Services;
 
 public class FileImageService
     : IFileImageService
 {
-    public async Task<FileContentResult> GetImageFileAsync()
+    private static readonly string AssetsPath = Path.Combine(Directory.GetCurrentDirectory(), "Assets");
+
+    public async Task<FileContentResult?> GetImageFileAsync(string fileName)
     {
-        return new FileContentResult(await File.ReadAllBytesAsync("wwwroot/images/creature.png"), "image/png");
+        if (!File.Exists(Path.Combine(AssetsPath, fileName)))
+            return null;
+
+        var file = await File.ReadAllBytesAsync(Path.Combine(AssetsPath, fileName));
+        return new FileContentResult(file, "image/png");
     }
 }

@@ -8,5 +8,5 @@ namespace MyFabulousCreatures.Services;
 
 public interface IFileImageService
 {
-    Task<FileContentResult> GetImageFileAsync();
+    Task<FileContentResult?> GetImageFileAsync(string fileName);
 }
