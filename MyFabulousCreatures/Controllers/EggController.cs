@@ -12,7 +12,7 @@ public sealed class EggController
     : ControllerBase
 {
     private readonly ILogger<EggController> _logger;
-    
+
     public EggController(
         ILogger<EggController> logger)
     {
@@ -25,7 +25,7 @@ public sealed class EggController
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Assets/Egg", "oeuf.png");
 
         _logger.LogInformation("Filepath: {0}", filePath);
-        
+
         if (!System.IO.File.Exists(filePath)) return NotFound();
 
         var fileByte = await System.IO.File.ReadAllBytesAsync(filePath);
