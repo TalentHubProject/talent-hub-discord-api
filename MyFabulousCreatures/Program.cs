@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IFileImageService, FileImageService>();
+builder.Services.AddScoped<IStaticFileService, StaticFileService>();
 
 var app = builder.Build();
 
