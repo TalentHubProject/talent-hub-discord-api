@@ -7,8 +7,8 @@ using Remora.Results;
 
 namespace MyFabulousCreatures.Services;
 
-public class FileImageService
-    : IFileImageService
+public class StaticFileService
+    : IStaticFileService
 {
     private static readonly string AssetsPath = Path.Combine(Directory.GetCurrentDirectory(), "Assets");
 

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyFabulousCreatures.Services;
 
-public interface IFileImageService
+public interface IStaticFileService
 {
     Task<FileContentResult?> GetImageFileAsync(string fileName);
 }

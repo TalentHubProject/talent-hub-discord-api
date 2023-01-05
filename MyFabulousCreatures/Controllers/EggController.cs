@@ -13,20 +13,20 @@ public sealed class EggController
     : ControllerBase
 {
     private readonly ILogger<EggController> _logger;
-    private readonly IFileImageService _fileImageService;
+    private readonly IStaticFileService _staticFileService;
 
     public EggController(
         ILogger<EggController> logger,
-        IFileImageService fileImageService)
+        IStaticFileService staticFileService)
     {
         _logger = logger;
-        _fileImageService = fileImageService;
+        _staticFileService = staticFileService;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetEggAsync()
     {
-        var egg = await _fileImageService.GetImageFileAsync("Egg/1/egg_1.png");
+        var egg = await _staticFileService.GetImageFileAsync("Egg/1/egg_1f.png");
         
         if (egg is null)
         {
