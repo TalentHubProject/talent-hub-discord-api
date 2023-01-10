@@ -15,7 +15,7 @@ public class EggStaticFileService
     public async Task<FileContentResult?> GetImageFileAsync(Egg model)
     {
         AssetPath path = new AssetPathBase();
-        path = new EggAssetPathDecorator(path, model);
+        path = new EggAssetPathDecorator(path);
 
         var creaturePath = $"{path.GetPath()}/{model.CreatureType}/egg_{model.Cracks}.png";
 
