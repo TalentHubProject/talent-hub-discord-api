@@ -2,6 +2,7 @@
 // Licensed under the GNU General Public License v3.0.
 // See the LICENSE file in the project root for more information.
 
+using MyFabulousCreatures.Models;
 using MyFabulousCreatures.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IStaticFileService, StaticFileService>();
+builder.Services.AddScoped(typeof(IStaticFileService<Egg>), typeof(EggStaticFileService));
 
 var app = builder.Build();
 

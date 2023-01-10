@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Assets\Egg" />
+        <Folder Include="Assets\Eggs" />
     </ItemGroup>
 
 </Project>

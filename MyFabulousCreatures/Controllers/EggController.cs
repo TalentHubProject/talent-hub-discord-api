@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.AspNetCore.Mvc;
+using MyFabulousCreatures.Models;
 using MyFabulousCreatures.Services;
 
 namespace MyFabulousCreatures.Controllers;
@@ -12,26 +13,25 @@ namespace MyFabulousCreatures.Controllers;
 public sealed class EggController
     : ControllerBase
 {
+    private readonly IStaticFileService<Egg> _eggService;
     private readonly ILogger<EggController> _logger;
-    private readonly IStaticFileService _staticFileService;
 
     public EggController(
         ILogger<EggController> logger,
-        IStaticFileService staticFileService)
+        IStaticFileService<Egg> eggService)
     {
         _logger = logger;
-        _staticFileService = staticFileService;
+        _eggService = eggService;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetEggAsync()
+    public async Task<IActionResult> GetEggAsync([FromQuery] string creatureType, int creatureAge)
     {
-        var egg = await _staticFileService.GetImageFileAsync("Egg/1/egg_1f.png");
-        
-        if (egg is null)
-        {
-            return NotFound();
-        }
+        var egg = await _eggService.GetImageFileAsync(new Egg(creatureType, creatureAge));
+
+        _logger.LogInformation("Egg ({}, {}) was requested.", creatureType, creatureAge);
+
+        if (egg is null) return NotFound();
 
         return File(egg.FileContents, "image/png");
     }

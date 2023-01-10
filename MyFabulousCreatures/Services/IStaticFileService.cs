@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyFabulousCreatures.Services;
 
-public interface IStaticFileService
+public interface IStaticFileService<in TModel>
+    where TModel
+    : class
 {
-    Task<FileContentResult?> GetImageFileAsync(string fileName);
+    Task<FileContentResult?> GetImageFileAsync(TModel model);
 }

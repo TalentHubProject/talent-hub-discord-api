@@ -4,4 +4,4 @@
 
 namespace MyFabulousCreatures.Models;
 
-public record Egg(int Cracks = 0);
+public record Egg(string CreatureType, int Cracks = 0);
