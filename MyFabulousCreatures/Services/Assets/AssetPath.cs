@@ -4,13 +4,9 @@
 
 namespace MyFabulousCreatures.Services.Assets;
 
-public abstract class PathDecorator
-    : AssetPathBase
+public abstract class AssetPath
 {
-    public PathDecorator(string path)
-        : base(DecoratedPath.GetPath())
-    {
-    }
+    protected string Path { get; }
 
-    protected static AssetPathBase DecoratedPath { get; }
+    public abstract string GetPath();
 }

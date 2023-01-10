@@ -4,13 +4,15 @@
 
 namespace MyFabulousCreatures.Services.Assets;
 
-public class AssetPathBase
+public abstract class AssetPathWithExtension
     : AssetPath
 {
-    public override string GetPath()
+    protected AssetPath AssetPath;
+
+    protected AssetPathWithExtension(AssetPath assetPath)
     {
-        return System.IO.Path.Combine(
-            Directory.GetCurrentDirectory(),
-            "Assets");
+        AssetPath = assetPath;
     }
+
+    protected AssetPath Extension { get; set; }
 }
