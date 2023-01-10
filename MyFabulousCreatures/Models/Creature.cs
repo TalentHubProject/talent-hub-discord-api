@@ -4,24 +4,4 @@
 
 namespace MyFabulousCreatures.Models;
 
-public class Creature
-{
-    protected Creature(
-        int type,
-        int age)
-    {
-        Type = type;
-        Age = age;
-    }
-
-    public int Type { get; init; }
-    public int Age { get; init; }
-
-    public void Deconstruct(
-        out int type,
-        out int age)
-    {
-        type = Type;
-        age = Age;
-    }
-}
+public record Creature(string Type, int Age = 0);

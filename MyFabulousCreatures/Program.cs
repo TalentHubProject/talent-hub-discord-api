@@ -15,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped(typeof(IStaticFileService<Egg>), typeof(EggStaticFileService));
+builder.Services.AddScoped(typeof(IStaticFileService<Creature>), typeof(CreatureStaticFileService));
 
 var app = builder.Build();
 

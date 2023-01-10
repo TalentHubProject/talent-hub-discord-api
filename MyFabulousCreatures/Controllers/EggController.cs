@@ -25,11 +25,11 @@ public sealed class EggController
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetEggAsync([FromQuery] string creatureType, int creatureAge)
+    public async Task<IActionResult> GetEggAsync([FromQuery] Egg model)
     {
-        var egg = await _eggService.GetImageFileAsync(new Egg(creatureType, creatureAge));
+        var egg = await _eggService.GetImageFileAsync(model);
 
-        _logger.LogInformation("Egg ({}, {}) was requested.", creatureType, creatureAge);
+        _logger.LogInformation("Egg ({}, {}) was requested.", model.CreatureType, model.Cracks);
 
         if (egg is null) return NotFound();
 
