@@ -29,7 +29,7 @@ public sealed class EggController
     {
         var egg = await _eggService.GetImageFileAsync(model);
 
-        _logger.LogInformation("Egg ({}, {}) was requested.", model.CreatureType, model.Cracks);
+        _logger.LogInformation("Egg ({}, {}) was requested.", model.Type, model.Cracks);
 
         if (egg is null) return NotFound();
 

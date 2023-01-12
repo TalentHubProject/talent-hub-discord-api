@@ -6,4 +6,4 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyFabulousCreatures.Models;
 
-public record Egg(string CreatureType, [Range(0, 4)] int Cracks = 0);
+public record Egg(string Type, [Range(0, 4)] int Cracks = 0);

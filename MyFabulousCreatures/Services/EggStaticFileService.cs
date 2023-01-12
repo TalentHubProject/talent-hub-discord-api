@@ -17,7 +17,7 @@ public class EggStaticFileService
         AssetPath path = new AssetPathBase();
         path = new EggAssetPathDecorator(path);
 
-        var creaturePath = $"{path.GetPath()}/{model.CreatureType}/egg_{model.Cracks}.png";
+        var creaturePath = $"{path.GetPath()}/{model.Type}/egg_{model.Cracks}.png";
 
         if (!File.Exists(creaturePath)) return null;
 
