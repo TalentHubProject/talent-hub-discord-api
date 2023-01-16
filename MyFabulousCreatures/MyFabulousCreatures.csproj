@@ -14,7 +14,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="Assets\Creatures\Cow" />
         <Folder Include="Assets\Creatures\Snake" />
+        <Folder Include="Assets\Eggs\Cow" />
         <Folder Include="Assets\Eggs\Snake" />
     </ItemGroup>
 
