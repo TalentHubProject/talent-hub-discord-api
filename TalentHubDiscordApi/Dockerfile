@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["TalentHubDiscordApi/TalentHubDiscordApi.csproj", "TalentHubDiscordApi/"]
-RUN dotnet restore "TalentHubDiscordApi/TalentHubDiscordApi.csproj"
+COPY ["TalentHubDiscordApi.csproj", "./"]
+RUN dotnet restore "TalentHubDiscordApi.csproj"
 COPY . .
-WORKDIR "/src/TalentHubDiscordApi"
+WORKDIR "/src"
 RUN dotnet build "TalentHubDiscordApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
