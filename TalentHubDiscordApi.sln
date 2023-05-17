@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFabulousCreatures", "MyFabulousCreatures\MyFabulousCreatures.csproj", "{A49FB946-08CD-49F9-8E37-6BD03C7FF355}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHubDiscordApi", "TalentHubDiscordApi\TalentHubDiscordApi.csproj", "{A49FB946-08CD-49F9-8E37-6BD03C7FF355}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHubDiscordApi.Test", "TalentHubDiscordApi.Test\TalentHubDiscordApi.Test.csproj", "{88FEC49A-DD08-4821-A548-9B5CBC597B99}"
 EndProject

@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MyFabulousCreatures\MyFabulousCreatures.csproj" />
+      <ProjectReference Include="..\TalentHubDiscordApi\TalentHubDiscordApi.csproj" />
     </ItemGroup>
 
 </Project>
