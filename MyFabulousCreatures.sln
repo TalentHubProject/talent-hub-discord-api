@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFabulousCreatures", "MyFabulousCreatures\MyFabulousCreatures.csproj", "{A49FB946-08CD-49F9-8E37-6BD03C7FF355}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHubDiscordApi.Test", "TalentHubDiscordApi.Test\TalentHubDiscordApi.Test.csproj", "{88FEC49A-DD08-4821-A548-9B5CBC597B99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A49FB946-08CD-49F9-8E37-6BD03C7FF355}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A49FB946-08CD-49F9-8E37-6BD03C7FF355}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A49FB946-08CD-49F9-8E37-6BD03C7FF355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88FEC49A-DD08-4821-A548-9B5CBC597B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FEC49A-DD08-4821-A548-9B5CBC597B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FEC49A-DD08-4821-A548-9B5CBC597B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FEC49A-DD08-4821-A548-9B5CBC597B99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
