@@ -17,4 +17,6 @@ RUN dotnet publish "TalentHubDiscordApi.csproj" -c Release -o /app/publish /p:Us
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+# Assurez-vous que le chemin du dossier "Assets" est correct par rapport au répertoire de travail
+COPY /src/Assets ./Assets
 ENTRYPOINT ["dotnet", "TalentHubDiscordApi.dll"]
