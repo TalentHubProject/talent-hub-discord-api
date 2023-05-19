@@ -6,4 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyFabulousCreatures.Models;
 
+/// <summary>
+///     Represents a creature.
+/// </summary>
+/// <param name="Type">The type of the creature.</param>
+/// <param name="Age">The age of the creature.</param>
 public record Creature(string Type, [Range(1, 3)] int Age = 0);
