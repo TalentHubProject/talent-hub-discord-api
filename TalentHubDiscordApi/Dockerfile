@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["TalentHubDiscordApi.csproj", "./"]
 RUN dotnet restore "./TalentHubDiscordApi.csproj"
 COPY . .
-WORKDIR "/src/TalentHubDiscordApi"
+WORKDIR "/src"
 RUN dotnet build "TalentHubDiscordApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
