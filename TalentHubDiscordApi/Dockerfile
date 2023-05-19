@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["TalentHubDiscordApi/TalentHubDiscordApi.csproj", "./"]
+COPY ["TalentHubDiscordApi.csproj", "./"]
 RUN dotnet restore "./TalentHubDiscordApi.csproj"
 COPY . .
 WORKDIR "/src/TalentHubDiscordApi"
