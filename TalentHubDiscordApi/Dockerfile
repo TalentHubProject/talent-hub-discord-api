@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["TalentHubDiscordApi.csproj", "./"]
-RUN dotnet restore "TalentHubDiscordApi.csproj"
+COPY ["TalentHubDiscordApi/TalentHubDiscordApi.csproj", "./"]
+RUN dotnet restore "./TalentHubDiscordApi.csproj"
 COPY . .
-WORKDIR "/src"
+WORKDIR "/src/TalentHubDiscordApi"
 RUN dotnet build "TalentHubDiscordApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
@@ -17,6 +17,5 @@ RUN dotnet publish "TalentHubDiscordApi.csproj" -c Release -o /app/publish /p:Us
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-# Assurez-vous que le chemin du dossier "Assets" est correct par rapport au répertoire de travail
-COPY /src/Assets ./Assets
+COPY ["TalentHubDiscordApi/Assets", "Assets/"]
 ENTRYPOINT ["dotnet", "TalentHubDiscordApi.dll"]
