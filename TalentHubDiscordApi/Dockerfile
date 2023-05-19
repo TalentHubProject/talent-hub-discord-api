@@ -17,5 +17,5 @@ RUN dotnet publish "TalentHubDiscordApi.csproj" -c Release -o /app/publish /p:Us
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY ["TalentHubDiscordApi/Assets", "Assets/"]
+COPY ["Assets", "Assets/"]
 ENTRYPOINT ["dotnet", "TalentHubDiscordApi.dll"]
