@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Moq;
-using MyFabulousCreatures.Controllers;
-using MyFabulousCreatures.Models;
-using MyFabulousCreatures.Services;
+// Copyright (c) Alexis Chân Gridel. All Rights Reserved.
+// Licensed under the GNU General Public License v3.0.
+// See the LICENSE file in the project root for more information.
 
 public class CreatureControllerTests
 {
