@@ -11,6 +11,14 @@ public class CreatureFactoryService(
     ILogger<CreatureFactoryService> logger)
     : ICreatureFactoryService
 {
+    protected static readonly Dictionary<int, string> RaceIdToName = new()
+    {
+        {1, "Cat"},
+        {2, "Cow"},
+        {3, "Mouse"},
+        {4, "Snake"}
+    };
+    
     public async Task<FileContentResult> CreateCreatureAsync(int level, int raceId)
     {
         var imagePath = GenerateImagePath(level, raceId);
@@ -39,22 +47,15 @@ public class CreatureFactoryService(
             imageIndex = Math.Min(imageIndex, maxCreatureIndex); 
         }
     
-        var raceName = RaceIdToName(raceId); 
+        var raceName = RaceIdToName[raceId];
         var folderName = type == "Egg" ? "Eggs" : "Creatures";
         var imageName = $"{type.ToLower()}_{imageIndex}.png";
     
         return Path.Combine("Assets", folderName, raceName, imageName);
     }
 
-    private static string RaceIdToName(int raceId)
+    public int GetRandomRaceId()
     {
-        return raceId switch
-        {
-            1 => "Cat",
-            2 => "Cow",
-            3 => "Mouse",
-            4 => "Snake",
-            _ => throw new ArgumentOutOfRangeException(nameof(raceId), "Race ID is not recognized.")
-        };
+        return new Random().Next(1, RaceIdToName.Count + 1);
     }
 }

@@ -9,4 +9,5 @@ namespace MyFabulousCreatures.Infrastructure;
 public interface ICreatureFactoryService
 {
     Task<FileContentResult> CreateCreatureAsync(int level, int raceId);
+    int GetRandomRaceId();
 }
